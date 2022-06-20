@@ -8,7 +8,7 @@ export default function TypeOfDevice() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/get/type-of-devices')
+      .get('https://inventarybe.herokuapp.com/get/type-of-devices')
       .then(function (response) {
         setTypeOfDevices(response.data);
       });
@@ -17,7 +17,7 @@ export default function TypeOfDevice() {
   const {register, handleSubmit} = useForm();
   const onSubmit = data => {
     axios
-      .post('http://localhost:4000/create/type-of-device', data)
+      .post('https://inventarybe.herokuapp.com/create/type-of-device', data)
       .then(function (response) {
         setTypeOfDevices([...typeOfDevices, ...response.data]);
       });

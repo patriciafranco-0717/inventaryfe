@@ -12,23 +12,23 @@ export default function TypeOfDevice() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/get/inventaries')
+      .get('https://inventarybe.herokuapp.com/get/inventaries')
       .then(function (response) {
         setInventaries(response.data);
       });
-    axios.get('http://localhost:4000/get/users').then(function (response) {
+    axios.get('https://inventarybe.herokuapp.com/get/users').then(function (response) {
       setUsers(response.data);
     });
-    axios.get('http://localhost:4000/get/brands').then(function (response) {
+    axios.get('https://inventarybe.herokuapp.com/get/brands').then(function (response) {
       setBrands(response.data);
     });
     axios
-      .get('http://localhost:4000/get/status-of-devices')
+      .get('https://inventarybe.herokuapp.com/get/status-of-devices')
       .then(function (response) {
         setStatusOfDevices(response.data);
       });
     axios
-      .get('http://localhost:4000/get/type-of-devices')
+      .get('https://inventarybe.herokuapp.com/get/type-of-devices')
       .then(function (response) {
         setTypeOfDevices(response.data);
       });
@@ -37,7 +37,7 @@ export default function TypeOfDevice() {
   const {register, handleSubmit} = useForm();
   const onSubmit = data => {
     axios
-      .post('http://localhost:4000/create/inventary', data)
+      .post('https://inventarybe.herokuapp.com/create/inventary', data)
       .then(function (response) {
         setInventaries([...inventaries, ...response.data]);
       });

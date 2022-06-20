@@ -7,7 +7,7 @@ export default function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/get/users').then(function (response) {
+    axios.get('https://inventarybe.herokuapp.com/get/users').then(function (response) {
       setUsers(response.data);
     });
   }, []);
@@ -15,7 +15,7 @@ export default function Users() {
   const {register, handleSubmit} = useForm();
   const onSubmit = data => {
     axios
-      .post('http://localhost:4000/create/user', data)
+      .post('https://inventarybe.herokuapp.com/create/user', data)
       .then(function (response) {
         setUsers([...users, ...response.data]);
       });

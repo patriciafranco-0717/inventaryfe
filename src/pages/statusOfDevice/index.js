@@ -8,7 +8,7 @@ export default function StatusOfDevice() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:4000/get/status-of-devices')
+      .get('https://inventarybe.herokuapp.com/get/status-of-devices')
       .then(function (response) {
         setStatusOfDevices(response.data);
       });
@@ -17,7 +17,7 @@ export default function StatusOfDevice() {
   const {register, handleSubmit} = useForm();
   const onSubmit = data => {
     axios
-      .post('http://localhost:4000/create/status-of-device', data)
+      .post('https://inventarybe.herokuapp.com/create/status-of-device', data)
       .then(function (response) {
         setStatusOfDevices([...statusOfDevices, ...response.data]);
       });

@@ -7,7 +7,7 @@ export default function Brands() {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/get/brands').then(function (response) {      
+    axios.get('https://inventarybe.herokuapp.com/get/brands').then(function (response) {      
       setBrands(response.data);
     });
   }, []);
@@ -15,9 +15,9 @@ export default function Brands() {
   const {register, handleSubmit} = useForm();
   const onSubmit = data => {    
     axios
-      .post('http://localhost:4000/create/brand', data)
+      .post('https://inventarybe.herokuapp.com/create/brand', data)
       .then(function (response) {
-        setBrands([...brands, ...response.data]);        
+        setBrands([...brands, ...response.data]);         
       });
   };
 
